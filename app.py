@@ -83,7 +83,7 @@ def intro():
     ]
     return render_template('intro.html',phim=phim)
 
-@app.route('/themphim',methods=["GET,POST"])
+@app.route('/themphim',methods=["GET","POST"])
 def themphim():
     if request.method == "GET":
         return render_template("themphim.html")
@@ -97,4 +97,4 @@ def themphim():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port =5555)
