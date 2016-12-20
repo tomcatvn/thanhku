@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/w3.css">
+    <title>them phim</title>
+</head>
+<body>
+
+<form class="w3-card-4 " action="{{ url_for("capnhatphim") }}" method="post">
+    <div class="w3-container w3-blue">
+        <h2>CẬP NHẬT PHIM VÀO DANH SÁCH</h2>
+    </div>
+    <div class="w3-container">
+        <p><label for="text">Tên phim</label>
+        <input class="w3-input" type="text" name="tenphim"></p>
+        <p><label for="text">Thể loại</label>
+        <input class="w3-input" type="text" name="theloai"></p>
+        <p><label for="text">Thời lượng</label>
+        <input class="w3-input" type="text" name="thoiluong"></p>
+        <p><label for="url">Đường dẫn</label>
+        <input class="w3-input" type="url" name="duongdan"></p>
+        <p><label for="image">Ảnh</label>
+        <input class="w3-input" type="url" name="anh"></p>
+        <p><input class="w3-btn" type="submit" value="XÁC NHẬN"></p>
+    </div>
+</form>
+
+    <div class="w3-container w3-center" style="padding-top: 10px">
+        <a href={{ url_for("intro") }}><button class="w3-btn w3-teal w3-round-xlarge">TRỞ VỀ TRANG CHỦ</button></a>
+        <a href={{ url_for("xoasua") }}><button class="w3-btn w3-teal w3-round-xlarge">TỚI TRANG XÓA/SỬA</button></a>
+    </div>
+
+</body>
+</html>

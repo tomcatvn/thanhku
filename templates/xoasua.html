@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>danh sach</title>
+    <link rel="stylesheet" href="../static/w3.css">
+    <link rel="stylesheet" href="../static/intro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="w3-container w3-blue">
+        <h2>XÓA/SỬA DANH SÁCH PHIM</h2>
+    </div>
+    <div class="w3-container" id="phim">
+        <div class="ul1 w3-row-padding">
+
+            {% for phim in listsua %}
+                <div class="w3-col l4" style="padding: 7px">
+                    <div class="w3-card-4 l4 " style="background-color: #ffe0b3">
+                        <a href="{{ url_for("xoa",phimid=phim.id) }}"><i class="fa fa-times"></i></a>
+                        <a href="{{ url_for("sua",phimid=phim.id) }}"><i class="fa fa-pencil-square-o"></i></a>
+                        <a href={{ phim["duongdan"] }}><img src={{ phim.anh }} alt="anh"></a>
+                        <h6 class="w3-center w3-green" style="font-weight: bold">{{ phim["tenphim"] }}</h6>
+                        <p align="center"><span style="font-weight: bold">Thể loại: </span>{{ phim["theloai"] }}</p>
+                        <p align="center"><span style="font-weight: bold">Thời lượng: </span>{{ phim["thoiluong"] }}</p>
+                        <p align="center"><span style="font-weight: bold">ID: </span>{{ phim.id}}</p>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+</body>
+</html>
